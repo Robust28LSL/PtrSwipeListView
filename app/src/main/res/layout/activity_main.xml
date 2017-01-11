@@ -1,0 +1,85 @@
+<com.it.juyou.widget.DragLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dl"
+    tools:context=".MainActivity">
+    <!--下层 左边的布局-->
+    <include layout="@layout/main_left_me"/>
+    <!--上层 右边的主布局-->
+    <com.it.juyou.widget.CustomRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f9f9f9"
+            android:orientation="vertical"
+            >
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="#f9f9f9"
+          android:orientation="horizontal"
+          >
+          <Button
+              android:id="@+id/vh_bt"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="VH"
+              android:background="@drawable/divider_bg"
+              />
+          <Button
+              android:id="@+id/add_bt"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="添加条目"
+              android:background="@drawable/divider_bg"
+              />
+          <Button
+              android:id="@+id/delete_bt"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="删除条目"
+              />
+          <com.it.juyou.view.CustomTitleView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:titleTextColor="#ff0000"
+              app:titleText="萌萌哒"
+              app:titleTextSize="20sp"
+              android:padding="10dp"
+              />
+       </LinearLayout>
+        <include
+                layout="@layout/cus_layout"
+                />
+      <com.it.juyou.view.MyListview
+          android:id="@+id/listview"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:cacheColorHint="#00000000"
+          android:divider="#c62424"
+          android:dividerHeight="1dp"
+          android:listSelector="#00ffffff"
+          android:scrollbars="none"
+          android:visibility="visible"
+          />
+         <!-- android:layoutAnimation="@anim/anim_item"-->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:visibility="gone"
+
+        />
+
+        </LinearLayout>
+    </com.it.juyou.widget.CustomRelativeLayout>
+    <include layout="@layout/main_left_me"/>
+</com.it.juyou.widget.DragLayout>
